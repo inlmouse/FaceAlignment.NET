@@ -44,6 +44,7 @@ The relative path used in source code are all start from `../build`, you may cha
 ### Pre-trained Model
 
 I have trained a model for 68 facial keypoints, the model can be downloaded from [BaiduYun](http://pan.baidu.com/s/1kUXBsA7).
+![68lm](alignmentvs2013project/Demo/bin/Debug/results/figure_68_markup.jpg)
 
 ### Demo
 
