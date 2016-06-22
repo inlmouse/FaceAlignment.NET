@@ -1,0 +1,8 @@
+C:\Research\face-alignment\alignmentvs2013project\Demo\bin\Debug\Demo.exe
+C:\Research\face-alignment\alignmentvs2013project\Demo\bin\Debug\Demo.pdb
+C:\Research\face-alignment\alignmentvs2013project\Demo\obj\Debug\Demo.csprojResolveAssemblyReference.cache
+C:\Research\face-alignment\alignmentvs2013project\Demo\obj\Debug\Demo.MainForm.resources
+C:\Research\face-alignment\alignmentvs2013project\Demo\obj\Debug\Demo.Properties.Resources.resources
+C:\Research\face-alignment\alignmentvs2013project\Demo\obj\Debug\Demo.csproj.GenerateResource.Cache
+C:\Research\face-alignment\alignmentvs2013project\Demo\obj\Debug\Demo.exe
+C:\Research\face-alignment\alignmentvs2013project\Demo\obj\Debug\Demo.pdb
