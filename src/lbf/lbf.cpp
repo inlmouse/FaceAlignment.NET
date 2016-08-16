@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <cstdlib>
+#include <iostream>
 #include "liblinear/linear.h"
 #include "lbf/lbf.hpp"
 
@@ -296,10 +297,12 @@ std::vector<std::vector<double>> LbfCascador::Predict(Mat &img, BBox &bbox, bool
 		delta_shape = delta_shape.reshape(0, landmark_n);
 		calcSimilarityTransform(bbox.Project(current_shape), mean_shape, scale, rotate);
 		current_shape = bbox.ReProject(bbox.Project(current_shape) + scale * delta_shape * rotate.t());
+		//std::cout << k << "................................" << endl;
 	}
 	std::vector<std::vector<double>> output(current_shape.rows, std::vector<double>(2));
 	for (int i = 0; i < current_shape.rows; i++)
 	{
+		//std::cout << current_shape.at<double>(i, 0) << std::endl;
 		output[i][0] = current_shape.at<double>(i, 0);
 		output[i][1] = current_shape.at<double>(i, 1);
 	}

@@ -15,8 +15,8 @@ int detect(char *);
 
 
 int main(int argc, char **argv) {
-	
-	return detect("C:\\Research\\face-alignment\\data\\300W\\indoor_294.png");
+	return train(0);
+	/*return detect("C:\\Research\\face-alignment\\data\\300W\\indoor_294.png");
     if (argc != 2) {
         LOG("We need an argument");
         return 0;
@@ -41,6 +41,6 @@ int main(int argc, char **argv) {
     }
     else {
         LOG("Wrong Arguments.");
-    }
+    }*/
     return 0;
 }

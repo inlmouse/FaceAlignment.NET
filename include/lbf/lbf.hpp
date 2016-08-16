@@ -15,16 +15,16 @@ public:
 
 public:
     void Init(int stages_n);
-    void Train(std::vector<cv::Mat> &imgs, std::vector<cv::Mat> &gt_shapes, \
+	void Train(std::vector<cv::Mat> &imgs, std::vector<cv::Mat> &gt_shapes, \
                std::vector<cv::Mat> &current_shapes, std::vector<BBox> &bboxes, \
                cv::Mat &mean_shape, int start_from = 0);
-    void Test(std::vector<cv::Mat> &imgs, std::vector<cv::Mat> &gt_shapes, std::vector<BBox> &bboxes);
-    void GlobalRegressionTrain(std::vector<cv::Mat> &lbfs, std::vector<cv::Mat> &deltashapes, int stage);
-    cv::Mat GlobalRegressionPredict(const cv::Mat &lbf, int stage);
-    cv::Mat Predict(cv::Mat &img, BBox &bbox);
+	void Test(std::vector<cv::Mat> &imgs, std::vector<cv::Mat> &gt_shapes, std::vector<BBox> &bboxes);
+	void GlobalRegressionTrain(std::vector<cv::Mat> &lbfs, std::vector<cv::Mat> &deltashapes, int stage);
+	cv::Mat GlobalRegressionPredict(const cv::Mat &lbf, int stage);
+	cv::Mat Predict(cv::Mat &img, BBox &bbox);
 	std::vector<std::vector<double>> Predict(cv::Mat &img, BBox &bbox, bool isact);
-    void DumpTrainModel(int stage);
-    void ResumeTrainModel(int start_from = 0);
+	void DumpTrainModel(int stage);
+	void ResumeTrainModel(int start_from = 0);
 
     void Read(FILE *fd);
     void Write(FILE *fd);

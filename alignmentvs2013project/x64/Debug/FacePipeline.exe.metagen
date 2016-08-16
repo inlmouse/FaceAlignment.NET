@@ -1,0 +1,101 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly FacePipeline, Version=0.0.*, Culture=固定语言(固定国家/地区): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class alinment.ConfigCLI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 stages_n : Public
+    Int32 tree_n : Public
+    Int32 tree_depth : Public
+    System.String dataset : Public
+    System.String saved_file_name : Public
+    Int32 landmark_n : Public
+    Int32 initShape_n : Public
+    Int32[] feats_m : Public
+    Double[] radius_m : Public
+    Double bagging_overlap : Public
+    Int32[,] pupils : Public
+Class alinment.ABox: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Double, Double, Double, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Double x : Public
+    Double y : Public
+    Double x_center : Public
+    Double y_center : Public
+    Double x_scale : Public
+    Double y_scale : Public
+    Double width : Public
+    Double height : Public
+  Methods:
+    Project(Mat*, Mat* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
+    ReProject(Mat*, Mat* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
+Struct alinment.randomtree: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    Int32 depth : Public
+    Int32 nodes_n : Public
+    Int32 landmark_id : Public
+    Double[][] feats : Public
+    Int32[] thresholds : Public
+Struct alinment.randomforest: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    Int32 landmark_n : Public
+    Int32 trees_n : Public
+    Int32 tree_depth : Public
+    alinment.randomtree[][] random_trees : Public
+Struct alinment.LbfCascade: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    Int32 stages_n : Public
+    Int32 landmark_n : Public
+    Double[][] mean_shape : Public
+    alinment.randomforest[] random_forests : Public
+    Double[][][] gl_regression_weights : Public
+Class alinment.ImageConvert: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Mat2Bitmap(Mat* IsImplicitlyDereferenced): PrivateScope, Public, Static, HideBySig
+    Bitmap2Mat(Mat*, Bitmap): PrivateScope, Public, Static, HideBySig
+    Double2Mat(Mat*, Double[][]): PrivateScope, Public, Static, HideBySig
+    Mat2Double(Mat*): PrivateScope, Public, Static, HideBySig
+Class alinment.InterReaction: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Managed2Native(LbfCascador*, ValueType LbfCascade IsBoxed): PrivateScope, Public, Static, HideBySig
+    Managed2Native(RandomForest*, ValueType randomforest IsBoxed): PrivateScope, Public, Static, HideBySig
+    Managed2Native(RandomTree*, ValueType randomtree IsBoxed): PrivateScope, Public, Static, HideBySig
+    Native2Managed(LbfCascador*): PrivateScope, Public, Static, HideBySig
+    Native2Managed(RandomForest*): PrivateScope, Public, Static, HideBySig
+    Native2Managed(RandomTree*): PrivateScope, Public, Static, HideBySig
+Class alinment.Landmarks: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Pridect(Mat*, BBox* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
+Class FastDetection.FrameFaceInfo: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Drawing.Bitmap): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 count : Public
+    Int32[,] facedetails : Public
+    Double[,][] landmarks : Public
+    Int32[,][] correctedlandmarks : Public
+    System.Drawing.Bitmap ShowBitmap : Public
+    System.Drawing.Bitmap OriBitmp : Public
+  Methods:
+    Correction(): PrivateScope, Public, HideBySig
+Struct FastDetection.FaceInfo: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+    Void .ctor(Int32, Int32[,]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 count : Public
+    Int32[,] facedetails : Public
+Class FastDetection.FastFace: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Single, Int32, Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Detect_Frontal(Bitmap): PrivateScope, Public, HideBySig

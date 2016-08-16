@@ -1,0 +1,40 @@
+﻿生成启动时间为 2016/8/16 16:43:45。
+     1>项目“C:\Research\face-alignment\alignmentvs2013project\FaceAlinment\FaceAlinment.vcxproj”在节点 2 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (FaceAlinment.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /W1 /WX- /Od /D _WINDLL /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /TP /FU"C:\Research\face-alignment\alignmentvs2013project\x64\Debug\FastFace.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /errorReport:prompt /clr:nostdlib ..\..\src\lbf\common.cpp
+         Microsoft(R) C/C++ 优化编译器版本 18.00.40629
+         用于 Microsoft(R) .NET Framework 版本 4.06.1080.0
+         版权所有(C) Microsoft Corporation。  保留所有权利。
+         
+         cl /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /W1 /WX- /Od /D _WINDLL /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /TP /FU"C:\Research\face-alignment\alignmentvs2013project\x64\Debug\FastFace.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /errorReport:prompt /clr:nostdlib ..\..\src\lbf\common.cpp
+         
+         common.cpp
+     1>C:\src\opencv\build\include\opencv2/core/mat.hpp(1965): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>C:\src\opencv\build\include\opencv2/core/persistence.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>C:\src\opencv\build\include\opencv2/core/utility.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Research\face-alignment\alignmentvs2013project\x64\Debug\FacePipeline.dll" /NOLOGO opencv_ts300.lib opencv_ts300d.lib opencv_world300.lib opencv_world300d.lib DetectionCorex64.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Research\face-alignment\alignmentvs2013project\x64\Debug\FacePipeline.pdb" /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X64 /DLL x64\Debug\daxpy.obj
+         x64\Debug\ddot.obj
+         x64\Debug\dnrm2.obj
+         x64\Debug\dscal.obj
+         x64\Debug\linear.obj
+         x64\Debug\tron.obj
+         x64\Debug\common.obj
+         x64\Debug\lbf.obj
+         x64\Debug\rf.obj
+         x64\Debug\main.obj
+         x64\Debug\train.obj
+         x64\Debug\pipeline.cli.obj
+         x64\Debug\test.obj
+         "x64\Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+     1>opencv_ts300.lib(ts.obj) : warning LNK4099: 未找到 PDB“opencv_ts300.pdb”(使用“opencv_ts300.lib(ts.obj)”或在“C:\Research\face-alignment\alignmentvs2013project\x64\Debug\opencv_ts300.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>opencv_ts300.lib(ts_gtest.obj) : warning LNK4099: 未找到 PDB“opencv_ts300.pdb”(使用“opencv_ts300.lib(ts_gtest.obj)”或在“C:\Research\face-alignment\alignmentvs2013project\x64\Debug\opencv_ts300.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>opencv_ts300.lib(ts_perf.obj) : warning LNK4099: 未找到 PDB“opencv_ts300.pdb”(使用“opencv_ts300.lib(ts_perf.obj)”或在“C:\Research\face-alignment\alignmentvs2013project\x64\Debug\opencv_ts300.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>opencv_ts300.lib(opencv_ts_pch.obj) : warning LNK4099: 未找到 PDB“opencv_ts300.pdb”(使用“opencv_ts300.lib(opencv_ts_pch.obj)”或在“C:\Research\face-alignment\alignmentvs2013project\x64\Debug\opencv_ts300.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+         FaceAlinment.vcxproj -> C:\Research\face-alignment\alignmentvs2013project\x64\Debug\FacePipeline.dll
+     1>已完成生成项目“C:\Research\face-alignment\alignmentvs2013project\FaceAlinment\FaceAlinment.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.29

@@ -1,6 +1,7 @@
 #include <cmath>
 #include <cstdio>
 #include <cassert>
+#include <iostream>
 #include "lbf/rf.hpp"
 
 using namespace cv;
@@ -250,6 +251,7 @@ Mat RandomForest::GenerateLBF(Mat &img, Mat &current_shape, BBox &bbox, Mat &mea
                 }
             }
             lbf(i*trees_n + j) = (i*trees_n + j)*base + code;
+			//cout << lbf(i*trees_n + j) << endl;
         }
     }
     return lbf;

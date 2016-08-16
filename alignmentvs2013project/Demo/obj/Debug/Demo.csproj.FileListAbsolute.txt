@@ -6,3 +6,6 @@ C:\Research\face-alignment\alignmentvs2013project\Demo\obj\Debug\Demo.Properties
 C:\Research\face-alignment\alignmentvs2013project\Demo\obj\Debug\Demo.csproj.GenerateResource.Cache
 C:\Research\face-alignment\alignmentvs2013project\Demo\obj\Debug\Demo.exe
 C:\Research\face-alignment\alignmentvs2013project\Demo\obj\Debug\Demo.pdb
+C:\Research\face-alignment\alignmentvs2013project\Demo\bin\Debug\FacePipeline.dll
+C:\Research\face-alignment\alignmentvs2013project\Demo\bin\Debug\FastFace.dll
+C:\Research\face-alignment\alignmentvs2013project\Demo\bin\Debug\FacePipeline.pdb

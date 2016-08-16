@@ -151,7 +151,7 @@ void data_augmentation(vector<Mat> &imgs, vector<Mat> &gt_shapes, vector<BBox> &
 int train(int start_from) {
 	Config &config = Config::GetInstance();
 	LOG("Load train data from %s", config.dataset.c_str());
-	string txt = config.dataset + "/train.txt";
+	string txt = config.dataset + "\\train.txt";
 	vector<Mat> imgs_, gt_shapes_;
 	vector<BBox> bboxes_;
 	parseTxt(txt, imgs_, gt_shapes_, bboxes_);

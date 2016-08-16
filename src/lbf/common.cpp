@@ -6,6 +6,7 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include "lbf/common.hpp"
+#include <iostream>
 
 using namespace cv;
 using namespace std;
@@ -37,8 +38,10 @@ Mat BBox::Project(const Mat &shape) const {
     Mat_<double> res(shape.rows, shape.cols);
     const Mat_<double> &shape_ = (Mat_<double>)shape;
     for (int i = 0; i < shape.rows; i++) {
+		
         res(i, 0) = (shape_(i, 0) - x_center) / x_scale;
         res(i, 1) = (shape_(i, 1) - y_center) / y_scale;
+		//std::cout << i << ":" << shape_(i, 0) << ", " << shape_.channels() << "\t" << shape_(i, 1) << endl;
     }
     return res;
 }
@@ -50,6 +53,7 @@ Mat BBox::ReProject(const Mat &shape) const {
     for (int i = 0; i < shape.rows; i++) {
         res(i, 0) = shape_(i, 0)*x_scale + x_center;
         res(i, 1) = shape_(i, 1)*y_scale + y_center;
+		//std::cout << shape_(i, 0) << "\t" << "Re" << "\t" << x_center << endl;
     }
     return res;
 }
@@ -64,7 +68,7 @@ void calcSimilarityTransform(const Mat &shape1, const Mat &shape2, double &scale
     y1_center = cv::mean(shape1.col(1))[0];
     x2_center = cv::mean(shape2.col(0))[0];
     y2_center = cv::mean(shape2.col(1))[0];
-
+	//std::cout << x1_center << "\t" << y1_center << endl;
     Mat temp1(shape1.rows, shape1.cols, CV_64FC1);
     Mat temp2(shape2.rows, shape2.cols, CV_64FC1);
     temp1.col(0) = shape1.col(0) - x1_center;
@@ -82,14 +86,16 @@ void calcSimilarityTransform(const Mat &shape1, const Mat &shape2, double &scale
     scale = s1 / s2;
     temp1 /= s1;
     temp2 /= s2;
-
+	
     double num = temp1.col(1).dot(temp2.col(0)) - temp1.col(0).dot(temp2.col(1));
     double den = temp1.col(0).dot(temp2.col(0)) + temp1.col(1).dot(temp2.col(1));
+	//std::cout << num << "\t" << den << endl;
     double normed = sqrt(num*num + den*den);
     double sin_theta = num / normed;
     double cos_theta = den / normed;
     rotate_(0, 0) = cos_theta; rotate_(0, 1) = -sin_theta;
     rotate_(1, 0) = sin_theta; rotate_(1, 1) = cos_theta;
+	//!!!!!!!
     rotate = rotate_;
 }
 
@@ -200,9 +206,9 @@ void LOG(const char *fmt, ...) {
 
 
 Config::Config() {
-    dataset = "C:\\Research\\face-alignment\\data\\300W";
-    saved_file_name = "C:\\Research\\face-alignment\\model\\68.model";
-    stages_n = 5;
+    dataset = "C:\\Data\\300W";
+    saved_file_name = "C:\\Data\\300W\\GlasssixLandmarks_10stage.model";
+    stages_n = 10;
     tree_n = 6;
     tree_depth = 5;
     landmark_n = 68;

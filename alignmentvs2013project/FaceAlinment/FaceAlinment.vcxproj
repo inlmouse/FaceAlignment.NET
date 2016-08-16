@@ -22,7 +22,7 @@
     <ProjectGuid>{3532B80B-BF2E-416C-ADC0-BC269CE04331}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>FaceAlinment</RootNamespace>
-    <ProjectName>FaceAlinment</ProjectName>
+    <ProjectName>FacePipeline</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -66,8 +66,8 @@
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Research\face-alignment\include;C:\Research\face-alignment\3rdparty;C:\src\opencv\build\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\src\opencv\build\x64\vc12\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Research\face-alignment\alignmentvs2013project\bin;C:\Research\face-alignment\include;C:\Research\face-alignment\3rdparty;C:\src\opencv\build\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Research\face-alignment\alignmentvs2013project\lib;C:\src\opencv\build\x64\vc12\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -104,7 +104,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Link>
-      <AdditionalDependencies>opencv_ts300.lib;opencv_ts300d.lib;opencv_world300.lib;opencv_world300d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_ts300.lib;opencv_ts300d.lib;opencv_world300.lib;opencv_world300d.lib;DetectionCorex64.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <ClCompile>
@@ -121,7 +121,7 @@
     <ClInclude Include="..\..\include\lbf\common.hpp" />
     <ClInclude Include="..\..\include\lbf\lbf.hpp" />
     <ClInclude Include="..\..\include\lbf\rf.hpp" />
-    <ClInclude Include="datastructure.clr.h" />
+    <ClInclude Include="pipeline.cli.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\3rdparty\liblinear\daxpy.cpp" />
@@ -134,10 +134,15 @@
     <ClCompile Include="..\..\src\lbf\lbf.cpp" />
     <ClCompile Include="..\..\src\lbf\rf.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
-    <ClCompile Include="..\..\src\prepare.cpp" />
-    <ClCompile Include="..\..\src\test.cpp" />
     <ClCompile Include="..\..\src\train.cpp" />
-    <ClCompile Include="alinment.clr.cpp" />
+    <ClCompile Include="pipeline.cli.cpp" />
+    <ClCompile Include="test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="FastFace">
+      <HintPath>..\x64\Debug\FastFace.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
