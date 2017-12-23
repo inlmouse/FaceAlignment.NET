@@ -44,3 +44,35 @@ Temporary Items
 *.png
 *.jpg
 *.model
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Others
+*.tlog
+*.log
+*.ilk
+*.pdb
+*.cache
+*.sdf
+*.opensdf
+*.deps
+*.idb
+*.ico
+*.rc
+*.asm
+*.ipch
+*.metagen
+*.res
+*.txt
+*.ipdb
+*.iobj
+*.force
+*.manifest
+*.model
+*.caffemodel
+*.db
+*.opendb
+*.suo
